@@ -31,7 +31,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/staff', 'StaffController@index')->name('all-staff-members');
         Route::get('/staff/create', 'StaffController@create')->name('new-staff');
         Route::post('/staff', ['uses' => 'StaffController@store', 'as' => 'add-new-staff']);
-        Route::delete('/staff/{staff}',['uses' => 'StaffController@delete', 'as' => 'delete-staff']);
+        /*Route::delete('/staff/{staff}',['uses' => 'StaffController@delete', 'as' => 'delete-staff']);*/
 
         Route::get('create/{staff}/message', 'MessageController@createMessage')->name('email-staff');
 
@@ -51,6 +51,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/staff/{staff}',['uses' => 'StaffController@show', 'as' => 'show-staff']);
     Route::get('/staff/{staff}/edit',['uses' => 'StaffController@edit', 'as' => 'edit-staff']);
+    Route::get('/staff/{staff}/delete',['uses' => 'StaffController@delete', 'as' => 'delete-staff']);
     Route::put('/staff/{staff}', ['uses' => 'StaffController@update', 'as' => 'update-staff']);
 
     Route::get('/leave/create', 'StaffLeaveController@create')->name('apply.leave');
