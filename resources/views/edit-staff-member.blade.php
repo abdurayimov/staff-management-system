@@ -6,7 +6,7 @@
 
 	<div class="panel panel-default">
 		<div class="panel-body">
-			<h2>Редактирование {{ $staff->user->name }}&rsquo;s Profile</h2>
+			<h2>Редактирование профиля {{ $staff->user->name }}</h2>
 			<hr>
 
 			@include('parts.action-buttons')
@@ -14,7 +14,7 @@
 			<hr>
 			@include('parts.message-block')
 
-			<img width="300" src="{{ asset('/storage/staff/'.$staff->image) }}" class="thumbnail" alt="{{ $staff->name }}">
+			<img width="300" src="{{ asset('staff-img/'.$staff->image) }}" class="thumbnail" alt="{{ $staff->name }}">
 			<br>
 			<form action="{{ route('update-staff', ['id' => $staff->id]) }}" method="post" enctype="multipart/form-data">
 				{{ csrf_field() }}
