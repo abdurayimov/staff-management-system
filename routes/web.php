@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/feedback', function () {
+Route::get('feedback', function () {
     return redirect("/feedback");
 });
 
