@@ -8,7 +8,7 @@
 <div class="panel panel-default">
 	<div class="panel-body">
 		<h2>Просмотр всех отпусков по {{ $leaves->user->name }}</h2>
-		{{--<h2>You're viewing <span class="text-info">{{ $leave_type }}</span></h2>--}}
+		<!--<h2>You're viewing <span class="text-info">{{ $leave_type }}</span></h2>-->
 		<hr>
 
 		@include('parts.action-buttons')
