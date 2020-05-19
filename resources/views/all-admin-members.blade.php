@@ -26,6 +26,7 @@
 					</thead>
 					@foreach($admins as $admin)
 						<tbody>
+						@if (Auth::user()->is_admin == true)
 							<tr>
 								<td class="text-center">{{ $counter }}</td>
 								<td class="text-center">{{ $admin->name }}</td>
@@ -34,6 +35,7 @@
 									<a href="{{ route('edit-staff',$admin) }}" class="btn btn-info">Edit</a>
 								</td>
 							</tr>
+				        @endif
 						</tbody>
 						<?php $counter++ ?>
 					@endforeach
