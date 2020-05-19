@@ -7,8 +7,8 @@
 
 <div class="panel panel-default">
 	<div class="panel-body">
-		<h2>Просмотр всех ожидающих отпусков</h2>
-		<!--<h2>You're viewing <span class="text-info">{{ $leave_type }}</span></h2>-->
+		{{--<h2>Просмотр всех отпусков по {{ $leaves->user->name }}</h2>--}}
+		<h2>Просмотр всех <span class="text-info">{{ $leave_type }}</span> отпусков</h2>
 		<hr>
 
 		@include('parts.action-buttons')
@@ -53,7 +53,7 @@
 					@endforeach
 				</table>
 			@else
-				<h1>Пока еще нет ни одного ожидающего отпуска!</h1>
+				<h1>Пока еще нет {{ strtoupper($leave_type) }} отпусков!</h1>
 			@endif
 		</div>
 	</div>
