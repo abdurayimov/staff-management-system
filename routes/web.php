@@ -21,6 +21,11 @@ Route::get('/', function () {
 });
 
 
+Route::get('/feedback', function () {
+    return redirect("/feedback");
+});
+
+
 
 Route::middleware(['auth'])->group(function () {
 
