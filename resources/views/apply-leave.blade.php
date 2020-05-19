@@ -7,7 +7,7 @@
 
 <div class="panel panel-default">
 	<div class="panel-body">
-		<h2>Hello You're Applying for Leave</h2>
+		<h2>Здравствуйте, вы подаете заявление на отпуск</h2>
 		<hr>
 		@include('parts.action-buttons')
 		<hr>
@@ -18,17 +18,17 @@
 			<input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
 
 			<div class="form-group">
-				<label for="start_work_date">Preferred Leave Start Date</label>
+				<label for="start_work_date">Предпочтительная дата начала отпуска</label>
 				<input type="date" name="leave_start_date" placeholder="12th June, 2018" value="{{ old('leave_start_date') }}" class="form-control">
 			</div>
 
 			<div class="form-group">
-				<label for="start_work_date">Preferred Leave End Date</label>
+				<label for="start_work_date">Предпочтительная дата окончания отпуска</label>
 				<input type="date" name="leave_end_date" placeholder="12th June, 2018" value="{{ old('leave_end_date') }}" class="form-control">
 			</div>
 
 			<div class="form-group">
-				<label class="col-sm-12" for="inputBody">Reason for Leave</label>
+				<label class="col-sm-12" for="inputBody">Пояснение к отпуску</label>
 				<div class="col-sm-12">
 
 					<textarea name="reason_for_leave" class="form-control" id="inputBody" rows="5" data-gramm="true"
@@ -45,7 +45,7 @@
 
 
 			<div class="form-group">
-				<button type="submit" class="btn btn-primary btn-md">Submit Leave Application</button>
+				<button type="submit" class="btn btn-primary btn-md">Оставить заявку на отпуск</button>
 			</div>
 		</form>
 	</div>

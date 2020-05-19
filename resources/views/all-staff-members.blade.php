@@ -7,7 +7,7 @@
 
 <div class="panel panel-default">
 	<div class="panel-body">
-		<h2>View all staff members</h2>
+		<h2>Просмотр сотрудников</h2>
 		<hr>
 
 		@include('parts.action-buttons')
@@ -19,10 +19,10 @@
 				<?php $counter = 1; ?>
 				<table class="table table-hover table-bordered">
 					<thead>
-						<th class="text-center">S/N</th>
-						<th class="text-center">Name</th>
-						<th class="text-center">Level</th>
-						<th class="text-center">Action</th>
+						<th class="text-center">Номер</th>
+						<th class="text-center">Имя</th>
+						<th class="text-center">Уровень</th>
+						<th class="text-center">Действие</th>
 					</thead>
 					@foreach($staff as $staff)
 						<tbody>
@@ -36,8 +36,8 @@
 									<a href="{{ route('show-staff',$staff) }}" class="btn btn-info">View</a>
 									<a href="{{ url('/staff/'.$staff->id.'/edit') }}" class="btn btn-info">Edit</a>
 									<a href="{{ route('delete-staff',$staff) }}" class="btn btn-danger">Delete</a>
-									<a href="{{ route('email-staff', $staff) }}" class="btn btn-success">Message</a>
-									<a href="{{ route('create-staff-payroll', $staff) }}" class="btn btn-success">Generate Payslip</a>
+									<a href="{{ route('email-staff', $staff) }}" class="btn btn-success">Сообщение</a>
+									<a href="{{ route('create-staff-payroll', $staff) }}" class="btn btn-success">Сгенерировать платежку</a>
 
 								</td>
 							</tr>
@@ -46,7 +46,7 @@
 					@endforeach
 				</table>
 			@else
-				<h1>There are no staff yet!</h1>
+				<h1>Пока нет ни одного сотрудника!</h1>
 			@endif
 		</div>
 	</div>

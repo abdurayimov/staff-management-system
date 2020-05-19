@@ -7,7 +7,7 @@
 
 <div class="panel panel-default">
 	<div class="panel-body">
-		<h2>View all Admins</h2>
+		<h2>Просмотр всех администраторов</h2>
 		<hr>
 
 		@include('parts.action-buttons')
@@ -19,10 +19,10 @@
 				<?php $counter = 1; ?>
 				<table class="table table-hover table-bordered">
 					<thead>
-						<th class="text-center">S/N</th>
-						<th class="text-center">Name</th>
+						<th class="text-center">Номер</th>
+						<th class="text-center">Имя</th>
 						<th class="text-center">Email</th>
-						<th class="text-center">Action</th>
+						<th class="text-center">Действие</th>
 					</thead>
 					@foreach($admins as $admin)
 						<tbody>
@@ -39,7 +39,7 @@
 					@endforeach
 				</table>
 			@else
-				<h1>There are no admin yet!</h1>
+				<h1>Пока нет ни одного администратора!</h1>
 			@endif
 		</div>
 	</div>

@@ -7,8 +7,8 @@
 
 <div class="panel panel-default">
 	<div class="panel-body">
-		<h2>View all Leaves By {{ $leaves->user->name }}</h2>
-		<h3>Your current outstanding leave days is: <span class="text-info">{{ $leaves->getOutStandingLeaveDays() }} </span> days</h3>
+		<h2>Просмотр всех отпусков по {{ $leaves->user->name }}</h2>
+		<h3>Ваши текущие непогашенные дни отпуска: <span class="text-info">{{ $leaves->getOutStandingLeaveDays() }} </span> дней</h3>
 		<hr>
 
 		@include('parts.action-buttons')
@@ -20,10 +20,10 @@
 				<?php $counter = 1; ?>
 				<table class="table table-hover table-bordered">
 					<thead>
-						<th class="text-center">S/N</th>
-						<th class="text-center">Leave Start Date</th>
-						<th class="text-center">Leave End Date</th>
-						<th class="text-center">Reason for Leave</th>
+						<th class="text-center">Номер</th>
+						<th class="text-center">Дата начала отпуска</th>
+						<th class="text-center">Дата окончания отпуска</th>
+						<th class="text-center">Причиная отпуска</th>
 						<th class="text-center">Status</th>
 					</thead>
 					@foreach($leaves->leaves as $leaf)
@@ -35,9 +35,9 @@
 								<td class="text-center">{{ $leaf->reason_for_leave }}</td>
 								<td class="text-center">
 									@if ($leaf->is_approved == true)
-										<span class="text-info">{{ 'Approved' }} </span>
+										<span class="text-info">{{ 'Одобрен' }} </span>
 									@else
-										<span class="text-danger">{{ 'Pending Approval' }}</span>
+										<span class="text-danger">{{ 'Ожидание одобрения' }}</span>
 									@endif
 								</td>
 							</tr>
@@ -46,7 +46,7 @@
 					@endforeach
 				</table>
 			@else
-				<h1>There are no leave applications for this user yet!</h1>
+				<h1>У этого пользователя еще нет заявок на отпуск!</h1>
 			@endif
 		</div>
 	</div>

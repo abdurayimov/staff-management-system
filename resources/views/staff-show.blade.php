@@ -6,13 +6,11 @@
 
     <div class="panel panel-default">
         <div class="panel-body">
-            <h2>Showing {{ $staff->name }}&rsquo;s Profile</h2>
+            <h2>Просмотр профиля {{ $staff->name }}</h2>
             <hr>
-            <a href="{{ url('/home') }}" class="btn btn-primary btn-md"><i class="fa fa-dashboard"></i> Dashboard</a>
-            <a href="{{ url('/staff/create') }}" class="btn btn-info btn-md"><i class="fa fa-plus"></i> Add new
-                staff</a>
-            <a href="{{ url('/staff') }}" class="btn btn-success btn-md"><i class="fa fa-users"></i> View
-                staff members</a>
+            <a href="{{ url('/home') }}" class="btn btn-primary btn-md"><i class="fa fa-dashboard"></i> Панель управления</a>
+            <a href="{{ url('/staff/create') }}" class="btn btn-info btn-md"><i class="fa fa-plus"></i> Добавить нового сотрудника</a>
+            <a href="{{ url('/staff') }}" class="btn btn-success btn-md"><i class="fa fa-users"></i> Просмотр сотрудников</a>
             <hr>
             @include('parts.message-block')
             <br>
@@ -28,7 +26,7 @@
                     <table class="table table-user-information">
                         <tbody>
                         <tr>
-                            <td>Name:</td>
+                            <td>Имя:</td>
                             <td>{{ $staff->user->name }}</td>
                         </tr>
                         <tr>
@@ -36,34 +34,34 @@
                             <td><a href="mailto:{{ $staff->user->email }}">{{ $staff->user->email }}</a></td>
                         </tr>
                         <tr>
-                            <td>Age:</td>
+                            <td>Возраст:</td>
                             <td>{{ $staff->age }}</td>
                         </tr>
 
                         <tr>
-                            <td>Phone Number:</td>
+                            <td>Телефон:</td>
                             <td>{{ $staff->phone }}</td>
                         </tr>
                         <tr>
-                            <td>Address:</td>
+                            <td>Адрес:</td>
                             <td>{{ $staff->address }}</td>
                         </tr>
 
                         <tr>
                         <tr>
-                            <td>City:</td>
+                            <td>Город:</td>
                             <td>{{ $staff->city }}</td>
                         </tr>
                         <tr>
-                            <td>State:</td>
+                            <td>Область/район:</td>
                             <td>{{ $staff->state }}</td>
                         </tr>
                         <tr>
-                            <td>Country:</td>
+                            <td>Страна:</td>
                             <td>{{ $staff->country }}</td>
                         </tr>
                         <tr>
-                            <td>Level:</td>
+                            <td>Уровень:</td>
                             <td>{{ $staff->level }}</td>
                         </tr>
 
@@ -72,8 +70,8 @@
                         </tbody>
                     </table>
 
-                    <a href="{{ route("all-staff-members-payroll") }}" class="btn btn-danger">PaySlips</a>
-                    <a href="#" class="btn btn-primary">Leave Status</a>
+                    <a href="{{ route("all-staff-members-payroll") }}" class="btn btn-danger">Платежки</a>
+                    <a href="#" class="btn btn-primary">Статус отпуска</a>
                 </div>
             </div>
 

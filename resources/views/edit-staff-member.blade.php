@@ -6,7 +6,7 @@
 
 	<div class="panel panel-default">
 		<div class="panel-body">
-			<h2>Edit {{ $staff->user->name }}&rsquo;s Profile</h2>
+			<h2>Редактирование {{ $staff->user->name }}&rsquo;s Profile</h2>
 			<hr>
 
 			@include('parts.action-buttons')
@@ -22,59 +22,59 @@
 				{{ method_field('PUT') }}
 				<input type="hidden" name="user_id" value="{{ $staff->user_id }}">
 				<div class="form-group">
-					<label for="name">Full name</label>
+					<label for="name">Полное имя</label>
 					<input type="text" name="name" placeholder="Full name" value="{{ $staff->user->name }}" class="form-control">
 				</div>
 
 				<div class="form-group">
-					<label for="email">Email Address</label>
+					<label for="email">Email адрес</label>
 					<input type="email" name="email" placeholder="Email Address" value="{{ $staff->user->email }}" class="form-control">
 				</div>
 
 				<div class="form-group">
-					<label for="age">Age</label>
+					<label for="age">Возраст</label>
 					<input type="number" name="age" placeholder="Age" value="{{ $staff->age }}" class="form-control">
 				</div>
 
 				<div class="form-group">
-					<label for="phone">Phone number</label>
+					<label for="phone">Телефон</label>
 					<input type="tel" name="phone" placeholder="Phone number" value="{{ $staff->phone }}" class="form-control">
 				</div>
 
 				<div class="form-group">
-					<label for="image">Update Staff Picture</label>
+					<label for="image">Обновить фото сотрудника</label>
 					<input type="file" name="image" class="form-control">
 				</div>
 
 				<div class="form-group">
-					<label for="address">Residential Address</label>
+					<label for="address">Адрес проживания</label>
 					<input type="text" name="address" placeholder="Residential Address" value="{{ $staff->address }}" class="form-control">
 				</div>
 
 				<div class="form-group">
-					<label for="city">City</label>
+					<label for="city">Город</label>
 					<input type="text" name="city" placeholder="City" value="{{ $staff->city }}" class="form-control">
 				</div>
 
 				<div class="form-group">
-					<label for="state">State</label>
+					<label for="state">Область</label>
 					<input type="text" name="state" placeholder="State" value="{{ $staff->state }}" class="form-control">
 				</div>
 
 				<div class="form-group">
-					<label for="country">Country</label>
+					<label for="country">Страна</label>
 					<input type="text" name="country" placeholder="Country" value="{{ $staff->country }}" class="form-control">
 				</div>
 
 				<div class="form-group">
-					<label for="level">Staff Level</label>
+					<label for="level">Уровень сотрудника</label>
 					<select name="level" class="form-control">
-						<option value="">Select Staff Level</option>
-						<option value="Intern" {{ $staff->level == 'Intern' ? 'selected' : ''  }}>Intern</option>
-						<option value="Junior" {{ $staff->level == 'Junior' ? 'selected' : ''  }}>Junior</option>
-						<option value="Senior" {{ $staff->level == 'Senior' ? 'selected' : ''  }}>Senior</option>
-						<option value="Supervisor" {{ $staff->level == 'Supervisor' ? 'selected' : ''  }}>Supervisor</option>
-						<option value="Manager" {{ $staff->level == 'Manager' ? 'selected' : ''  }}>Manager</option>
+						<option value="">Выбрать уровень сотрудника</option>
+						<option value="Intern" {{ $staff->level == 'Intern' ? 'selected' : ''  }}>Интерн</option>
+						<option value="Junior" {{ $staff->level == 'Junior' ? 'selected' : ''  }}>Младший</option>
+						<option value="Senior" {{ $staff->level == 'Senior' ? 'selected' : ''  }}>Старший</option>
+						<option value="Supervisor" {{ $staff->level == 'Supervisor' ? 'selected' : ''  }}>Руководитель</option>
+						<option value="Manager" {{ $staff->level == 'Manager' ? 'selected' : ''  }}>Менеджер</option>
 					</select>
 				</div>
 
@@ -82,18 +82,18 @@
 				<div class="form-group">
 					<div class="checkbox">
 						<label>
-							<input type="checkbox" name="is_admin" {{ $staff->user->is_admin ? 'checked' : '' }}> Make Admin
+							<input type="checkbox" name="is_admin" {{ $staff->user->is_admin ? 'checked' : '' }}> Сделать администратором
 						</label>
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label for="start_work_date">Work Start Date</label>
+					<label for="start_work_date">Дата начала работы</label>
 					<input type="date" name="start_work_date" value="{{ $staff->start_work_date->format('Y-m-d') }}" class="form-control">
 				</div>
 
 				<div class="form-group">
-					<button type="submit" class="btn btn-primary btn-md">Submit Details</button>
+					<button type="submit" class="btn btn-primary btn-md">Принять изменения</button>
 				</div>
 			</form>
 		</div>
