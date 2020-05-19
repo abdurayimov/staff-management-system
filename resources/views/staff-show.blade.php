@@ -65,8 +65,6 @@
                             <td>{{ $staff->level }}</td>
                         </tr>
 
-                        </tr>
-
                         </tbody>
                     </table>
 

@@ -23,8 +23,8 @@
 						<th class="text-center">Номер</th>
 						<th class="text-center">Дата начала отпуска</th>
 						<th class="text-center">Дата окончания отпуска</th>
-						<th class="text-center">Причиная отпуска</th>
-						<th class="text-center">Status</th>
+						<th class="text-center">Причина отпуска</th>
+						<th class="text-center">Статус</th>
 					</thead>
 					@foreach($leaves->leaves as $leaf)
 						<tbody>
