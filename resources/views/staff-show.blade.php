@@ -9,8 +9,8 @@
             <h2>Просмотр профиля {{ $staff->name }}</h2>
             <hr>
             <a href="{{ url('/home') }}" class="btn btn-primary btn-md"><i class="fa fa-dashboard"></i> Панель управления</a>
-            <a href="{{ url('/staff/create') }}" class="btn btn-info btn-md"><i class="fa fa-plus"></i> Добавить нового сотрудника</a>
-            <a href="{{ url('/staff') }}" class="btn btn-success btn-md"><i class="fa fa-users"></i> Просмотр сотрудников</a>
+            <a href="{{ url('/staff/create') }}" class="btn btn-info btn-md"><i class="fa fa-plus"></i> Новый сотрудник</a>
+            <a href="{{ url('/staff') }}" class="btn btn-success btn-md"><i class="fa fa-users"></i> Сотрудники</a>
             <hr>
             @include('parts.message-block')
             <br>
