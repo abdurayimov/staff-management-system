@@ -20,11 +20,10 @@ Route::get('/', function () {
     return redirect()->route('login');
 });
 
-
-Route::get('feedback', function () {
-    return redirect("/feedback");
-});
-
+Route::get('feedback', ['as' => 'feedback', function()
+{
+    return redirect('/feedback/index.html');
+}]);
 
 
 Route::middleware(['auth'])->group(function () {
@@ -53,7 +52,7 @@ Route::middleware(['auth'])->group(function () {
 
     });
 
-
+    
     Route::get('/staff/{staff}',['uses' => 'StaffController@show', 'as' => 'show-staff']);
     Route::get('/staff/{staff}/edit',['uses' => 'StaffController@edit', 'as' => 'edit-staff']);
     Route::get('/staff/{staff}/delete',['uses' => 'StaffController@delete', 'as' => 'delete-staff']);
