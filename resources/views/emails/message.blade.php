@@ -22,7 +22,7 @@
                 <div style="text-align:center;" class="mui-container">
 
 
-                    <h3 style="margin-top: -5px!important; margin-bottom: 16px!important; color: grey!important;">  Hello {{ $staff->user->name }}</h3>
+                    <h3 style="margin-top: -5px!important; margin-bottom: 16px!important; color: grey!important;">  Привет {{ $staff->user->name }}</h3>
 
                     {{ $content->content }}
 
@@ -32,7 +32,7 @@
 
                         <p style="padding:20px; text-align:left;">
 
-                        <a class="mui-btn mui-btn-primary mui-btn-lg">Get In Touch</a>
+                        <a class="mui-btn mui-btn-primary mui-btn-lg">Связаться</a>
                         <br><br>
                     </div>
 
