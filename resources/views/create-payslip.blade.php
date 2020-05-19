@@ -7,7 +7,7 @@
 
 <div class="panel panel-default">
 	<div class="panel-body">
-		<h2>Генерирование платежки для  {{ $staff->name }}</h2>
+		<h2>Генерирование платежки {{ $staff->name }}</h2>
 		<hr>
 		<a href="{{ url('/home') }}" class="btn btn-primary btn-md"><i class="fa fa-dashboard"></i> Панель управления</a>
 		<a href="{{ url('/all-staff-members') }}" class="btn btn-primary btn-md"><i class="fa fa-users"></i> Просмотр сотрудников</a>
@@ -19,16 +19,16 @@
 			<input type="hidden" name="staff_id" value="{{ $staff->id }}">
 			<div class="form-group">
 				<label for="gross_salary">Доход</label>
-				<input type="number" name="gross_salary" placeholder="Enter Gross Salary E.g 50000" value="{{ old('gross_salary') }}" class="form-control">
+				<input type="number" name="gross_salary" placeholder="Введите 'грязную' зарплату, например, 50000" value="{{ old('gross_salary') }}" class="form-control">
 			</div>
 
 			<div class="form-group">
 				<label for="tax_percentage">Налог</label>
-				<input type="number" name="tax_percentage" placeholder="Enter Tax Percentage E.g 15 " value="{{ old('tax_percentage') }}" class="form-control">
+				<input type="number" name="tax_percentage" placeholder="Введите процент налога, например, 15" value="{{ old('tax_percentage') }}" class="form-control">
 			</div>
 
 			<div class="form-group">
-				<label for="month">Заработная плата за месяц ? </label>
+				<label for="month">Заработная плата за месяц </label>
 				<select name="month" class="form-control">
 					<option value="">Выбрать месяц</option>
 					<option value="January">Январь</option>
@@ -48,7 +48,7 @@
 
 
 			<div class="form-group">
-				<label for="year">Выберите год для указанного выше месяца? </label>
+				<label for="year">Выберите год для указанного выше месяца </label>
 				<select name="year" class="form-control">
 					<option value="">Выбрать год</option>
 					<option value="2017">2017</option>
@@ -68,7 +68,7 @@
 			</div>
 
 			<div class="form-group">
-				<label for="comment">Комментарии ?</label>
+				<label for="comment">Комментарии </label>
 				<textarea name="comment" class="form-control" id="inputBody" rows="8" data-gramm="true"
 						  data-txt_gramm_id="71c8bb8e-8a51-c867-6c4f-5b14b864ac06"
 						  data-gramm_id="71c8bb8e-8a51-c867-6c4f-5b14b864ac06"
