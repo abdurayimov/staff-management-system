@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => env('APP_NAME', 'Staff Management System'),
+    'name' => env('APP_NAME', 'Система управления сотрудниками'),
 
     /*
     |--------------------------------------------------------------------------
