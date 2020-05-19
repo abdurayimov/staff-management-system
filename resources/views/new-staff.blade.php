@@ -63,11 +63,11 @@
 				<label for="level">Уровень сотрудника</label>
 				<select name="level" class="form-control">
 					<option value="">Выбрать уровень сотрудника</option>
-					<option value="Intern">Интерн</option>
-					<option value="Junior">Младший сотрудник</option>
-					<option value="Senior">Старший сотрудник</option>
-					<option value="Supervisor">Руководитель</option>
-					<option value="Manager">Менеджер</option>
+					<option value="Интерн">Интерн</option>
+					<option value="Младший">Младший сотрудник</option>
+					<option value="Старший">Старший сотрудник</option>
+					<option value="Руководитель">Руководитель</option>
+					<option value="Менеджер">Менеджер</option>
 				</select>
 			</div>
 
