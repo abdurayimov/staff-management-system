@@ -50,7 +50,7 @@
 			</div>
 
 			<div class="form-group">
-				<label for="state">Область/Район</label>
+				<label for="state">Область/район</label>
 				<input type="text" name="state" placeholder="State" value="{{ old('state') }}" class="form-control">
 			</div>
 
