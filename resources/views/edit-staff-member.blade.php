@@ -82,7 +82,7 @@
 				<div class="form-group">
 					<div class="checkbox">
 						<label>
-							<input type="checkbox" name="is_admin" {{ $staff->user->is_admin ? 'checked' : '' }}> Сделать администратором
+							<input type="checkbox" name="is_admin"> Сделать администратором
 						</label>
 					</div>
 				</div>
