@@ -22,14 +22,14 @@
                 <div style="text-align:center;" class="mui-container">
 
 
-                    <h3 style="margin-top: -5px!important; margin-bottom: 16px!important; color: grey!important;">  Hello {{ $admin->name }}</h3>
+                    <h3 style="margin-top: -5px!important; margin-bottom: 16px!important; color: grey!important;">  Привет {{ $admin->name }}</h3>
 
-                    See Your login Details Below: <br>
+                    Смотрите ваши данные для входа ниже: <br>
 
 
-                    {{ 'Email: '.$admin->email }} <br>
+                    {{ '"Электронный адрес": '.$admin->email }} <br>
 
-                    {{ 'Password: '.$password['password'] }} <br>
+                    {{ 'Пароль: '.$password['password'] }} <br>
 
 
                     <div class="mui-divider-bottom">
