@@ -19,12 +19,12 @@
 
 			<div class="form-group">
 				<label for="start_work_date">Предпочтительная дата начала отпуска</label>
-				<input type="date" name="leave_start_date" placeholder="12th June, 2018" value="{{ old('leave_start_date') }}" class="form-control">
+				<input type="date" name="leave_start_date" placeholder="31/04/2020" value="{{ old('leave_start_date') }}" class="form-control">
 			</div>
 
 			<div class="form-group">
 				<label for="start_work_date">Предпочтительная дата окончания отпуска</label>
-				<input type="date" name="leave_end_date" placeholder="12th June, 2018" value="{{ old('leave_end_date') }}" class="form-control">
+				<input type="date" name="leave_end_date" placeholder="31/04/2020" value="{{ old('leave_end_date') }}" class="form-control">
 			</div>
 
 			<div class="form-group">
