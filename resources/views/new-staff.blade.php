@@ -7,7 +7,7 @@
 
 <div class="panel panel-default">
 	<div class="panel-body">
-		<h2>Add New Admin/Staff</h2>
+		<h2>Добавление нового администратора/сотрудника</h2>
 		<hr>
 		@include('parts.action-buttons')
 		<hr>
@@ -15,77 +15,77 @@
 		<form action="{{ route('add-new-staff') }}" method="post" enctype="multipart/form-data">
 			{{ csrf_field() }}
 			<div class="form-group">
-				<label for="name">Full name</label>
+				<label for="name">Полное имя</label>
 				<input type="text" name="name" placeholder="Full name" value="{{ old('name') }}" class="form-control">
 			</div>
 
 			<div class="form-group">
-				<label for="email">Email Address</label>
+				<label for="email">Email адрес</label>
 				<input type="email" name="email" placeholder="Email Address" value="{{ old('email') }}" class="form-control">
 			</div>
 
 			<div class="form-group">
-				<label for="age">Age</label>
+				<label for="age">Возраст</label>
 				<input type="number" name="age" placeholder="Age" value="{{ old('age') }}" class="form-control">
 			</div>
 
 			<div class="form-group">
-				<label for="phone">Phone number</label>
+				<label for="phone">Телефон</label>
 				<input type="tel" name="phone" placeholder="Phone number" value="{{ old('phone') }}" class="form-control">
 			</div>
 
 			<div class="form-group">
-				<label for="image">Staff Picture</label>
+				<label for="image">Фото сотрудника</label>
 				<input type="file" name="image" class="form-control">
 			</div>
 
 			<div class="form-group">
-				<label for="address">Residential Address</label>
+				<label for="address">Адрес проживания</label>
 				<input type="text" name="address" placeholder="Residential Address" value="{{ old('address') }}" class="form-control">
 			</div>
 
 			<div class="form-group">
-				<label for="city">City</label>
+				<label for="city">Город</label>
 				<input type="text" name="city" placeholder="City" value="{{ old('city') }}" class="form-control">
 			</div>
 
 			<div class="form-group">
-				<label for="state">State</label>
+				<label for="state">Область/Район</label>
 				<input type="text" name="state" placeholder="State" value="{{ old('state') }}" class="form-control">
 			</div>
 
 			<div class="form-group">
-				<label for="country">Country</label>
+				<label for="country">Страна</label>
 				<input type="text" name="country" placeholder="Country" value="{{ old('country') }}" class="form-control">
 			</div>
 
 			<div class="form-group">
-				<label for="level">Staff Level</label>
+				<label for="level">Уровень сотрудника</label>
 				<select name="level" class="form-control">
-					<option value="">Select Staff Level</option>
-					<option value="Intern">Intern</option>
-					<option value="Junior">Junior Staff</option>
-					<option value="Senior">Senior Staff</option>
-					<option value="Supervisor">Supervisor</option>
-					<option value="Manager">Manager</option>
+					<option value="">Выбрать уровень сотрудника</option>
+					<option value="Intern">Интерн</option>
+					<option value="Junior">Младший сотрудник</option>
+					<option value="Senior">Старший сотрудник</option>
+					<option value="Supervisor">Руководитель</option>
+					<option value="Manager">Менеджер</option>
 				</select>
 			</div>
 
 			<div class="form-group">
 				<div class="checkbox">
 					<label>
-						<input type="checkbox" name="is_admin" {{ old('is_admin') ? 'checked' : '' }}> Make Admin
+						<input type="checkbox" name="is_admin" {{ old('is_admin') ? 'checked' : '' }}> Сделать администратором
 					</label>
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label for="start_work_date">Work Start Date</label>
+				<label for="start_work_date">Дата начала работы</label>
 				<input type="date" name="start_work_date" placeholder="12th June, 2018" value="{{ old('start_work_date') }}" class="form-control">
 			</div>
 
 			<div class="form-group">
-				<button type="submit" class="btn btn-primary btn-md">Submit Details</button>
+				<button type="submit" class="btn btn-primary btn-md">Принять изменения</button>
 			</div>
 		</form>
 	</div>

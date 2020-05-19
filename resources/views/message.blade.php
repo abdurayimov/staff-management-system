@@ -6,10 +6,10 @@
 @section('body')
 	<div class="panel panel-default">
 		<div class="panel-body">
-			<h4>Welcome, {{ Auth::user()->name }} {{ "you're about sending a message to ".$staff->user->name }}</h4>
+			<h4>Привет, {{ Auth::user()->name }} {{ "вы собираетесь отправить сообщение ".$staff->user->name }}</h4>
 			<hr>
-			<a href="{{ url('/new-staff') }}" class="btn btn-primary btn-md"><i class="fa fa-plus"></i> Add new staff</a>
-			<a href="{{ url('/all-staff-members') }}" class="btn btn-primary btn-md"><i class="fa fa-users"></i> View staff members</a>
+			<a href="{{ url('/new-staff') }}" class="btn btn-primary btn-md"><i class="fa fa-plus"></i> Добавить нового сотрудника</a>
+			<a href="{{ url('/all-staff-members') }}" class="btn btn-primary btn-md"><i class="fa fa-users"></i> Просмотр сотрудников</a>
 			<hr>
 			<p class="lead">
 				{{--<ul>--}}
@@ -23,26 +23,26 @@
 				<div class="row">
 					<div class="panel panel-default">
 						<div class="panel-heading clearfix">
-							<h3 class="panel-title">Message Form</h3>
+							<h3 class="panel-title">Форма сообщения</h3>
 						</div>
 						<div class="panel-body">
 
 							{{--@include('partials.form-validation-errors')--}}
 
 							<div class="form-group">
-								<label class="col-sm-2" for="inputTo">To</label>
+								<label class="col-sm-2" for="inputTo">Кому</label>
 								<div class="col-sm-10"><input name="email" type="email" class="form-control" id="inputTo"
 															  placeholder="comma separated list of recipients" value="{{ $staff->user->email }}">
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="col-sm-2" for="inputSubject">Subject</label>
+								<label class="col-sm-2" for="inputSubject">Тема</label>
 								<div class="col-sm-10"><input name="subject" type="text" class="form-control" id="inputSubject"
 															  placeholder="subject"></div>
 							</div>
 
 							<div class="form-group">
-								<label class="col-sm-12" for="inputBody">Message</label>
+								<label class="col-sm-12" for="inputBody">Сообщение</label>
 								<div class="col-sm-12">
 
 									<textarea name="content" class="form-control" id="inputBody" rows="8" data-gramm="true"
@@ -54,7 +54,7 @@
 							</div>
 
 							<div class="form-group">
-								<button type="submit" class="btn btn-primary btn-md">Send A Message</button>
+								<button type="submit" class="btn btn-primary btn-md">Отправить сообщение</button>
 							</div>
 						</div>
 					</div>

@@ -7,7 +7,7 @@
 
 <div class="panel panel-default">
 	<div class="panel-body">
-		{{--<h2>View all Leaves By {{ $leaves->user->name }}</h2>--}}
+		{{--<h2>Просмотр всех отпусков по {{ $leaves->user->name }}</h2>--}}
 		<h2>You're viewing <span class="text-info">{{ $leave_type }}</span></h2>
 		<hr>
 
@@ -20,12 +20,12 @@
 				{{ $counter = 1 }}
 				<table class="table table-hover table-bordered">
 					<thead>
-						<th class="text-center">S/N</th>
-						<th class="text-center">Staff Name</th>
-						<th class="text-center">Leave Start Date</th>
-						<th class="text-center">Leave End Date</th>
-						<th class="text-center">Reason for Leave</th>
-						<th class="text-center">Action/Status</th>
+						<th class="text-center">Номер</th>
+						<th class="text-center">Имя сотрудника</th>
+						<th class="text-center">Дата начала отпуска</th>
+						<th class="text-center">Дата окончания отпуска</th>
+						<th class="text-center">Причина отпуска</th>
+						<th class="text-center">Действие/статус</th>
 					</thead>
 					@foreach($leaves as $leaf)
 						<tbody>
@@ -40,10 +40,10 @@
 										<form method="post" action="{{ route('admin-approve-leave') }}">
 											{{ csrf_field() }}
 											<input type="hidden" name="leave_id" value="{{ $leaf->id }}">
-											<button type="submit" class="btn btn-primary btn-md"> Approve</button>
+											<button type="submit" class="btn btn-primary btn-md"> Одобрить</button>
 										</form>
 									@else
-										<span class="text-info">Approved</span>
+										<span class="text-info">Одобрен</span>
 									@endif
 
 								</td>
