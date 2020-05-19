@@ -26,7 +26,7 @@
 					</thead>
 					@foreach($admins as $admin)
 						<tbody>
-						@if (Auth::user()->is_admin == true)
+						@if ($admin->is_admin == true)
 							<tr>
 								<td class="text-center">{{ $counter }}</td>
 								<td class="text-center">{{ $admin->name }}</td>
