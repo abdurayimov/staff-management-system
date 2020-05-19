@@ -70,11 +70,11 @@
 					<label for="level">Уровень сотрудника</label>
 					<select name="level" class="form-control">
 						<option value="">Выбрать уровень сотрудника</option>
-						<option value="Intern" {{ $staff->level == 'Intern' ? 'selected' : ''  }}>Интерн</option>
-						<option value="Junior" {{ $staff->level == 'Junior' ? 'selected' : ''  }}>Младший</option>
-						<option value="Senior" {{ $staff->level == 'Senior' ? 'selected' : ''  }}>Старший</option>
-						<option value="Supervisor" {{ $staff->level == 'Supervisor' ? 'selected' : ''  }}>Руководитель</option>
-						<option value="Manager" {{ $staff->level == 'Manager' ? 'selected' : ''  }}>Менеджер</option>
+						<option value="Интерн" {{ $staff->level == 'Intern' ? 'selected' : ''  }}>Интерн</option>
+						<option value="Младший" {{ $staff->level == 'Junior' ? 'selected' : ''  }}>Младший</option>
+						<option value="Старший" {{ $staff->level == 'Senior' ? 'selected' : ''  }}>Старший</option>
+						<option value="Руководитель" {{ $staff->level == 'Supervisor' ? 'selected' : ''  }}>Руководитель</option>
+						<option value="Менеджер" {{ $staff->level == 'Manager' ? 'selected' : ''  }}>Менеджер</option>
 					</select>
 				</div>
 
