@@ -34,12 +34,12 @@ class StaffLeaveController extends Controller
 
     public function allPendingLeave(){
         $leaves = $this->leave_management_repository->getAllPendingLeave();
-        return view('leaves', compact('leaves'))->with(['leave_type' => 'Pending Leaves']);
+        return view('leaves', compact('leaves'))->with(['leave_type' => 'ожидающих']);
     }
 
     public function allApprovedLeave(){
         $leaves = $this->leave_management_repository->getAllApprovedLeave();
-        return view('leaves', compact('leaves'))->with(['leave_type' => 'Approved Leaves']);
+        return view('leaves', compact('leaves'))->with(['leave_type' => 'одобренных']);
     }
 
     public function approveLeave(AdminApproveRequest $request){
