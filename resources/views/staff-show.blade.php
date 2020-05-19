@@ -18,7 +18,7 @@
 
             <div class="row">
                 <div class="col-md-3 col-lg-3 " align="center">
-                    <img height="400" width="200" src="{{ asset('staff-img/'.$staff->image) }}" class="thumbnail"
+                    <img width="300" src="{{ asset('staff-img/'.$staff->image) }}" class="thumbnail"
                          alt="{{ $staff->name }}">
                 </div>
 
