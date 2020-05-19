@@ -13,13 +13,13 @@ class StaffTableSeeder extends Seeder
     public function run()
     {
         DB::table('staff')->insert([
-            'age' => 29,
-            'phone' => +233204040404,
-            'image' => 'Eshan Faiq Aliu1546381064.jpg',
-            'address' => 'Shallom Estate, Accra',
-            'city' => 'Accra',
-            'state' => 'Greater Accra',
-            'country' => 'Ghana',
+            'age' => 22,
+            'phone' => +79781091091,
+            'image' => 'Ibraim.jpg',
+            'address' => 'Uchebniy per.',
+            'city' => 'Simferopol',
+            'state' => 'Crimea',
+            'country' => 'Russia',
             'level' => 'Manager',
             'user_id' => \App\User::first()->id,
             'created_at' => \Carbon\Carbon::now()->subMonths(20),

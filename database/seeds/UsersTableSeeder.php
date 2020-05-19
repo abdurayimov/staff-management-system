@@ -12,8 +12,8 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'Gbeila Aliu Wahab',
-            'email' => 'aliuwahab@gmail.com',
+            'name' => 'Ibraim',
+            'email' => 'ibraim@gmail.com',
         	'password' => bcrypt('secret'),
         	'is_admin' => true,
             'created_at' => \Carbon\Carbon::now(),
@@ -22,8 +22,8 @@ class UsersTableSeeder extends Seeder
 
 
         DB::table('users')->insert([
-            'name' => 'Faiq Eshan Aliu',
-            'email' => 'admin@site.com',
+            'name' => 'Test',
+            'email' => 'test@apinar.com',
             'password' => bcrypt('secret'),
             'is_admin' => false,
             'created_at' => \Carbon\Carbon::now(),
