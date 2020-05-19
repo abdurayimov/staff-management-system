@@ -17,12 +17,12 @@
 
 
             <div class="row">
-                <div class="col-md-4 col-lg-4 " align="center">
-                    <img width="300" src="{{ asset('staff-img/'.$staff->image) }}" class="thumbnail"
+                <div class="col-md-3 col-lg-3 " align="center">
+                    <img width="200" src="{{ asset('staff-img/'.$staff->image) }}" class="thumbnail"
                          alt="{{ $staff->name }}">
                 </div>
 
-                <div class=" col-md-8 col-lg-8 ">
+                <div class=" col-md-9 col-lg-9 ">
                     <table class="table table-user-information">
                         <tbody>
                         <tr>
