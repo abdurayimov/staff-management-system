@@ -90,10 +90,9 @@ class StaffRepository
      */
     private function buildStaffProperties(Request $request, $profile_image, $admin)
     {
-        $staff_details = $request->except("_token", "image", "name", "email","_method");
+        $staff_details = $request->except("_token", "image", "name", "email","is_admin","_method");
         $staff_details = array_add($staff_details, "image", $profile_image);
         $staff_details = array_add($staff_details, "user_id", $admin->id);
-        $staff_details = array_add($staff_details, "is_admin", $admin->is_admin);
         return $staff_details;
     }
 

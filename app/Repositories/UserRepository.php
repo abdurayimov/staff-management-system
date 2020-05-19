@@ -56,6 +56,8 @@ class UserRepository
         $update_details = ['name' => $request->get('name'), 'email' => $request->get('email')];
         if ($request->get('is_admin')) {
             $update_details = array_add($update_details,'is_admin', true);
+        } else {
+            $update_details = array_add($update_details,'is_admin', false);
         }
         User::where('id', $id)->update($update_details);
 
