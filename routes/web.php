@@ -20,10 +20,8 @@ Route::get('/', function () {
     return redirect()->route('login');
 });
 
-//Route::get('feedback', ['as' => 'feedback', function()
-//{
-//    return redirect('/feedback/index.html');
-//}]);
+
+
 
 
 Route::middleware(['auth'])->group(function () {

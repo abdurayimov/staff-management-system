@@ -11,5 +11,5 @@
 <a href="{{ route('apply.leave') }}" class="btn btn-danger btn-md"><i class="fa fa-plus"></i> Заявка на отпуск</a>
 
 @if (Auth::user()->is_admin == false)
-    <a href="{{ route('feedback') }}" class="btn btn-primary btn-md"><i class="fa fa-list-ul"></i> Отправить отзыв</a>
+    <a href="/public/feedback/index.html" class="btn btn-primary btn-md"><i class="fa fa-list-ul"></i> Отправить отзыв</a>
 @endif
