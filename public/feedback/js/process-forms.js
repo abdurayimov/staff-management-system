@@ -1,3 +1,10 @@
+/*!
+ * Форма обратной связи (https://github.com/itchief/feedback-form)
+ * Страница с описанием: https://itchief.ru/lessons/php/feedback-form-for-website
+ * Copyright 2016-2019 Alexander Maltsev
+ * Licensed under MIT (https://github.com/itchief/feedback-form/blob/master/LICENSE)
+ */
+
 "use strict";
 
 var ProcessForm = function (config) {

@@ -12,15 +12,15 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
 /* 1 ЭТАП - НАСТРОЙКА ПЕРЕМЕННЫХ */
 const 
   IS_CHECK_CAPTCHA = true, // проверять капчу
-  IS_SEND_MAIL = true, // отправлять письмо получателю
+  IS_SEND_MAIL = false, // отправлять письмо получателю
   IS_SEND_MAIL_SENDER = false, // отправлять информационное письмо отправителю
   IS_WRITE_LOG = true, // записывать данные в лог
   IS_SEND_FILES_IN_BODY = true, // добавить ссылки на файлы в тело письма
   IS_SENS_FILES_AS_ATTACHMENTS = true, // необходимо ли прикреплять файлы к письму
-  MAX_FILE_SIZE = 524288, // максимальный размер файла (в байтах)
+  MAX_FILE_SIZE = 1524288, // максимальный размер файла (в байтах)
   ALLOWED_EXTENSIONS = array('jpg', 'jpeg', 'bmp', 'gif', 'png'), // разрешённые расширения файлов
-  MAIL_FROM = 'no-reply@mydomain.ru', // от какого email будет отправляться письмо
-  MAIL_FROM_NAME = 'Имя_сайта', // от какого имени будет отправляться письмо
+  MAIL_FROM = 'ibraimadjibekirov@yandex.ru', // от какого email будет отправляться письмо
+  MAIL_FROM_NAME = 'Feedback', // от какого имени будет отправляться письмо
   MAIL_SUBJECT = 'Сообщение с формы обратной связи', // тема письма
   MAIL_ADDRESS = 'manager@mydomain.ru', // кому необходимо отправить письмо
   MAIL_SUBJECT_CLIENT = 'Ваше сообщение доставлено'; // настройки mail для информирования пользователя о доставке сообщения
@@ -32,6 +32,8 @@ use PHPMailer\PHPMailer\Exception;
 require_once('../phpmailer/src/Exception.php');
 require_once('../phpmailer/src/PHPMailer.php');
 require_once('../phpmailer/src/SMTP.php');
+require_once('../db/connection.php');
+require_once('../db/db.php');
 // 3 ЭТАП - ОТКРЫТИЕ СЕССИИ И ИНИЦИАЛИЗАЦИЯ ПЕРЕМЕННОЙ ДЛЯ ХРАНЕНИЯ РЕЗУЛЬТАТОВ ОБРАБОТКИ ФОРМЫ
 session_start();
 $data['result'] = 'success';
@@ -51,6 +53,7 @@ if (isset($_POST['name'])) {
   $data['name'] = 'Заполните это поле.';
   $data['result'] = 'error';
 }
+
 // проверка поля email
 if (isset($_POST['email'])) {
   if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) { // защита от XSS
@@ -63,6 +66,7 @@ if (isset($_POST['email'])) {
   $data['email'] = 'Заполните это поле.';
   $data['result'] = 'error';
 }
+
 // проверка поля message
 if (isset($_POST['message'])) {
   $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING); // защита от XSS
@@ -163,9 +167,10 @@ if ($data['result'] == 'success' && IS_SEND_MAIL == true) {
     if (isset($attachments)) {
       $listFiles = '<ul>';
       foreach ($attachments as $attachment) {
-          $fileHref = substr($attachment, strpos($attachment, 'feedback/uploads/'));
+          $fileHref = substr($attachment, strpos($attachment, 'uploads/'));
+          $fileHref = __DIR__ .  '/../' . $fileHref;
           $fileName = basename($fileHref);
-          $listFiles .= '<li><a href="' . $startPath . $fileHref . '">' . $fileName . '</a></li>';
+          $listFiles .= '<li><a href="' . $fileHref . '">' . $fileName . '</a></li>';
       }
       $listFiles .= '</ul>';
       $bodyMail = str_replace('%email.attachments%', $listFiles, $bodyMail);
@@ -173,6 +178,7 @@ if ($data['result'] == 'success' && IS_SEND_MAIL == true) {
       $bodyMail = str_replace('%email.attachments%', '-', $bodyMail);
     }
   }
+
   // устанавливаем параметры
   $mail = new PHPMailer;
   $mail->CharSet = 'UTF-8';
@@ -181,7 +187,17 @@ if ($data['result'] == 'success' && IS_SEND_MAIL == true) {
   $mail->setFrom(MAIL_FROM, MAIL_FROM_NAME);
   $mail->Subject = MAIL_SUBJECT;
   $mail->Body = $bodyMail;
-  
+  $mail->AltBody = $bodyMail;
+
+  $mail->IsSMTP();                 			// telling the class to use SMTP
+  $mail->SMTPAuth   = true;
+  $mail->SMTPDebug  = 0;
+  $mail->Host       = "smtp.yandex.ru"; 	// set the SMTP server
+  $mail->Port       = 465;        			// set the SMTP port
+  $mail->Username   = "ibraimadjibekirov@yandex.ru";  // SMTP account username
+  $mail->Password   = "kjne235_!wejwie3";   // SMTP account password
+
+
   $emails = explode(',', MAIL_ADDRESS);
   foreach($emails as $address) {
     $mail->addAddress(trim($address));
@@ -197,6 +213,7 @@ if ($data['result'] == 'success' && IS_SEND_MAIL == true) {
   }
   // отправляем письмо
   if (!$mail->send()) {
+	$data['message'] = $mail->ErrorInfo;
     $data['result'] = 'error';
   }
 }
@@ -222,7 +239,16 @@ if ($data['result'] == 'success' && IS_SEND_MAIL_SENDER == true) {
 
   }
 }
-/* 8 ЭТАП - ЗАПИСЫВАЕМ ДАННЫЕ В ЛОГ */
+
+/* 8 ЭТАП - ЗАПИСЫВАЕМ ДАННЫЕ В БАЗУ */
+if ($data['result'] == 'success') {
+    $connection = new connection();
+    $sqlite = new db($connection->connect());
+
+    $sqlite->insertMessage($name, $email, $message, isset($attachments) ? $attachments : []);
+}
+
+/* 9 ЭТАП - ЗАПИСЫВАЕМ ДАННЫЕ В ЛОГ */
 if ($data['result'] == 'success' && IS_WRITE_LOG) {
   try {  
     $name = isset($name) ? $name : '-';

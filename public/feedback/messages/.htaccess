@@ -1,0 +1,5 @@
+AuthType Basic
+AuthName 'Restricted Area'
+AuthUserFile 'C:/UwAmp/www/feedback/messages/.htpasswd'
+Require valid-user
+DirectoryIndex messages.php
