@@ -8,7 +8,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Система управления сотрудниками') }}</title>
+    <title>{{ config('app.name', 'Система управления сотрудниками') }}
+    <br>Разработано Аджибекировым И.И.
+    </title>
 
     <!-- Styles -->
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
