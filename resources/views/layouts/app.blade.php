@@ -87,12 +87,12 @@
                 </div>
             </div>
         </nav>
-        
-        <div class=".siteFooter">
-        111
-        </div>
 
         @yield('content')
+    </div>
+    
+    <div class=".siteFooter">
+        111
     </div>
 
     <!-- Scripts -->
