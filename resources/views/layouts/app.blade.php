@@ -41,7 +41,6 @@
 	                    <a class="navbar-brand" href="{{ url('/home') }}">
 	                        {{ config('app.name', 'Laravel') }}
 	                    </a>
-	                    <br>Разработано Аджибекировым И.И.
                     @endif
                 </div>
 
@@ -93,7 +92,7 @@
             <div class="container">
                 <div class="navbar-header">
                    <div class="navbar-brand">
-                        111
+                        Разработчик: Аджибекиров И.И. (группа И-1-16), 2020 год
                     </div>
                 </div>
             </div>
