@@ -89,7 +89,7 @@
         </nav>
 
         @yield('content')
-        <div class=".siteFooter">
+        <div class="navbar navbar-default navbar-fixed-bottom">
                 111
         </div>
     </div>
