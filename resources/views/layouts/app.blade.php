@@ -8,9 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Система управления сотрудниками') }}
-    <br>Разработано Аджибекировым И.И.
-    </title>
+    <title>{{ config('app.name', 'Система управления сотрудниками') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
@@ -43,6 +41,7 @@
 	                    <a class="navbar-brand" href="{{ url('/home') }}">
 	                        {{ config('app.name', 'Laravel') }}
 	                    </a>
+	                    <br>Разработано Аджибекировым И.И.
                     @endif
                 </div>
 
