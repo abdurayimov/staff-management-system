@@ -87,6 +87,10 @@
                 </div>
             </div>
         </nav>
+        
+        <div class=".panel-footer">
+        111
+        </div>
 
         @yield('content')
     </div>
