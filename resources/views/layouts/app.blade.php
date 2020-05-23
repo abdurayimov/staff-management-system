@@ -86,12 +86,12 @@
                     </ul>
                 </div>
             </div>
-            <div class=".siteFooter">
-                111
-            </div>
         </nav>
 
         @yield('content')
+        <div class=".siteFooter">
+                111
+        </div>
     </div>
     
     
