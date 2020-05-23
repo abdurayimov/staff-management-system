@@ -88,7 +88,7 @@
             </div>
         </nav>
         
-        <div class=".panel-footer">
+        <div class=".siteFooter">
         111
         </div>
 
