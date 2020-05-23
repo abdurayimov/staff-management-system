@@ -86,14 +86,15 @@
                     </ul>
                 </div>
             </div>
+            <div class=".siteFooter">
+                111
+            </div>
         </nav>
 
         @yield('content')
     </div>
     
-    <div class=".siteFooter">
-        111
-    </div>
+    
 
     <!-- Scripts -->
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
