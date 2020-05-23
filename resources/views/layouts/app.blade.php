@@ -92,7 +92,9 @@
         <div class="navbar navbar-default navbar-fixed-bottom">
             <div class="container">
                 <div class="navbar-header">
-                    111
+                   <div class="navbar-brand">
+                        111
+                    </div>
                 </div>
             </div>
         </div>
